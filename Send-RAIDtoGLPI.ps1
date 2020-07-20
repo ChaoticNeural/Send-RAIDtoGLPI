@@ -1,3 +1,15 @@
+<#
+    .VERSION
+    0.1
+    
+    .SYNOPSIS
+    Script for getting data from LSI RAID Controller to GLPI inventory system.
+    .DESCRIPTION
+    This script collects physical disks info from JSON output of StorCLI and sends it to GLPI through API
+    .NOTES
+	Github: https://github.com/ChaoticNeural/Send-RAIDtoGLPI/
+#>
+
 $workDir = Split-Path $MyInvocation.MyCommand.Path;
 
 Import-Module (Join-Path $workDir "PSGLPI-master\PSGLPI")
