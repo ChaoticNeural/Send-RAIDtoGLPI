@@ -31,7 +31,7 @@ foreach ($controller in $jsondata.Controllers) {
 }
 
 #Get GLPI computer ID by motherboard serial number
-$MBserial = (Get-CimInstance win32_bios).serialnumber
+$MBserial = (Get-CimInstance win32_Baseboard).SerialNumber
 $GlpiComputerID = (Search-GlpiItem -ItemType "Computer" -SearchOptions (("OR", 2, "is", ""), ("AND", 5, "is", "$MBSerial")) -Creds $GlpiCreds).2
 
 foreach ($pathEncSlt in $arrayEncSlt) {
